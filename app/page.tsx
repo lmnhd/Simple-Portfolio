@@ -1,0 +1,376 @@
+import React from "react";
+import {
+  FaRobot,
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaCode,
+  FaCloud,
+  FaTools,
+  FaGraduationCap,
+  FaBriefcase,
+  FaShip,
+  FaDrumSteelpan,
+  FaPhone,
+} from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import FeatureCard from "@/components/FeatureCard";
+import Image from "next/image";
+import { WavyBackground } from "@/components/ui/wavy-background";
+import NavbarManager from "@/components/portfolio/NavbarManager";
+import DownloadButton from "@/components/portfolio/DownloadButton";
+import portfolioData from './portfolio-data.json';
+import { PortfolioData } from './types';
+
+export default async function PortfolioPage() {
+  const data: PortfolioData = portfolioData;
+  const { personalInfo, coverLetter, experience, education, skills, projects } = data;
+
+  // Static image paths (served from /public)
+  const halimede_img = "/portfolio_img/Halimede.png";
+  const leisure_life_img = "/portfolio_img/LeisureLife.png";
+  const subkitz_img = "/portfolio_img/Subkitz.png";
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <NavbarManager />
+      
+      {/* Hero Section with Animated Background */}
+      <WavyBackground 
+        containerClassName="min-h-screen w-full"
+        className="px-4 py-32"
+        colors={["#818cf8", "#c084fc", "#e879f9", "#38bdf8"]}
+        blur={10}
+        speed="slow"
+        waveOpacity={0.5}
+        backgroundFill="rgb(15, 23, 42)"
+      >
+        <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-xl ring-4 ring-white/30">
+          <Image
+            src="/headshot.jpg"
+            alt={personalInfo.name}
+            width={128}
+            height={128}
+            className="object-cover w-full h-full"
+            priority
+          />
+        </div>
+        <h1 className="mb-2 text-4xl md:text-5xl font-bold text-center text-violet-300">
+          {personalInfo.name}
+        </h1>
+        <p className="mb-4 text-lg font-light tracking-widest text-center text-white/70">
+          {personalInfo.company}
+        </p>
+        <p className="mb-8 text-xl md:text-2xl font-light tracking-wide text-center text-white/90">
+          {personalInfo.title}
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+          <a href={`mailto:${personalInfo.email}`}>
+            <Button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 border rounded-full bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30 hover:-translate-y-1">
+              Contact Me
+            </Button>
+          </a>
+          <DownloadButton />
+        </div>
+        <div className="flex items-center justify-center gap-6 mb-8">
+          <a
+            href={personalInfo.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors text-white/80 hover:text-white"
+          >
+            <FaGithub className="w-7 h-7" />
+          </a>
+          <a
+            href={personalInfo.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors text-white/80 hover:text-white"
+          >
+            <FaLinkedin className="w-7 h-7" />
+          </a>
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className="transition-colors text-white/80 hover:text-white"
+          >
+            <FaEnvelope className="w-7 h-7" />
+          </a>
+          <a
+            href={`tel:${personalInfo.phone}`}
+            className="transition-colors text-white/80 hover:text-white"
+          >
+            <FaPhone className="w-6 h-6" />
+          </a>
+        </div>
+        <p className="text-sm font-light tracking-wide text-center text-white/60">
+          {personalInfo.location} • {personalInfo.phone}
+        </p>
+      </WavyBackground>
+
+      {/* Overview Section */}
+      <section className="px-4 py-16 bg-white border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="mb-8 text-2xl font-bold text-foreground">
+            {coverLetter.title}
+          </h2>
+          <div className="space-y-4 leading-relaxed text-gray-700">
+            {coverLetter.paragraphs.map((paragraph, index) => (
+              <p key={index} className="text-base">{paragraph}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience & Education Section */}
+      <section className="px-4 py-20 bg-white" id="experience">
+        <div className="max-w-6xl mx-auto">
+          {/* Experience */}
+          <div className="mb-24">
+            <div className="flex items-center gap-3 mb-12">
+              <FaBriefcase className="w-6 h-6 text-primary" />
+              <h2 className="text-3xl font-bold text-foreground">
+                Experience
+              </h2>
+            </div>
+            <div className="space-y-8">
+              {experience.map((job, index) => (
+                <div key={index} className="pb-8 border-b border-gray-100 last:border-0">
+                  <h3 className="mb-1 text-xl font-bold text-foreground">
+                    {job.title}
+                  </h3>
+                  <p className="mb-1 text-base font-semibold text-primary">
+                    {job.company}
+                  </p>
+                  <p className="mb-4 text-sm text-gray-500">
+                    {job.period}
+                  </p>
+                  <p className="mb-4 text-base leading-relaxed text-gray-700">
+                    {job.description}
+                  </p>
+                  {job.technologies && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {job.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 text-sm font-medium border border-blue-200 rounded-lg bg-blue-50 text-primary"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {job.projects && (
+                    <ul className="space-y-2">
+                      {job.projects.map((project, projectIndex) => (
+                        <li key={projectIndex} className="flex items-start gap-3 text-sm text-gray-700">
+                          <span className="text-primary mt-1.5">▪</span>
+                          {project}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Education */}
+          <div className="p-8 border border-gray-200 rounded-lg bg-gray-50" id="education">
+            <div className="flex items-center gap-3 mb-8">
+              <FaGraduationCap className="w-6 h-6 text-primary" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Education
+              </h3>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {education.map((edu, index) => (
+                <div key={index}>
+                  <h4 className="mb-2 text-lg font-bold text-foreground">
+                    {edu.school}
+                  </h4>
+                  <p className="mb-2 text-sm text-gray-500">
+                    {edu.period}
+                  </p>
+                  <p className="text-base text-gray-700">
+                    {edu.degree}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="px-4 py-20 border-b border-gray-100 bg-gray-50" id="skills">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="mb-16 text-3xl font-bold text-center text-foreground">
+            Skills
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {/* Languages */}
+            <div className="p-8 transition-colors bg-white border border-gray-200 rounded-lg hover:border-primary">
+              <div className="flex items-center gap-3 mb-6">
+                <FaCode className="w-6 h-6 text-primary" />
+                <h3 className="text-lg font-bold text-foreground">
+                  Languages
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {skills.languages.map((lang, idx) => (
+                  <li key={idx} className="flex items-center text-sm text-gray-700">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>
+                    {lang}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* AI & Development */}
+            <div className="p-8 transition-colors bg-white border border-gray-200 rounded-lg hover:border-primary">
+              <div className="flex items-center gap-3 mb-6">
+                <FaTools className="w-6 h-6 text-primary" />
+                <h3 className="text-lg font-bold text-foreground">
+                  AI & Development
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {skills.aiAndDevelopment.map((skill, idx) => (
+                  <li key={idx} className="flex items-center text-sm text-gray-700">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Platforms */}
+            <div className="p-8 transition-colors bg-white border border-gray-200 rounded-lg hover:border-primary">
+              <div className="flex items-center gap-3 mb-6">
+                <FaCloud className="w-6 h-6 text-primary" />
+                <h3 className="text-lg font-bold text-foreground">
+                  Platforms
+                </h3>
+              </div>
+              <ul className="space-y-2">
+                {skills.platforms.map((platform, idx) => (
+                  <li key={idx} className="flex items-center text-sm text-gray-700">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>
+                    {platform}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section className="px-4 py-20 bg-white" id="projects">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="mb-16 text-3xl font-bold text-center text-foreground">
+            Featured projects
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {projects.map((project, index) => (
+              <div key={index} className="overflow-hidden transition-colors border border-gray-200 rounded-lg bg-gray-50 hover:border-primary hover:shadow-lg">
+                {/* Project Image */}
+                <div className="relative w-full h-48">
+                  <Image
+                    src={
+                      index === 0 ? halimede_img :
+                      index === 1 ? leisure_life_img :
+                      subkitz_img
+                    }
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                {/* Project Details */}
+                <div className="p-6">
+                  <h3 className="mb-2 text-lg font-bold text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="mb-4 text-sm text-gray-700 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm font-semibold transition-colors text-primary hover:text-blue-700"
+                  >
+                    View project
+                    <span className="ml-2">→</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="px-4 py-16 border-t border-gray-100 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="mb-4 text-2xl font-bold text-foreground">
+            Ready to work together.
+          </h2>
+          <p className="mb-8 text-gray-700">
+            Let's discuss how I can help with your next project.
+          </p>
+          <a href={`mailto:${personalInfo.email}`}>
+            <Button className="px-8 py-3 font-semibold text-white rounded-lg bg-primary hover:bg-blue-700">
+              Get in touch
+            </Button>
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="px-4 py-12 bg-white border-t border-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-center gap-6 mb-8">
+            <a
+              href={personalInfo.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 transition-colors hover:text-primary"
+            >
+              <FaGithub className="w-5 h-5" />
+            </a>
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 transition-colors hover:text-primary"
+            >
+              <FaLinkedin className="w-5 h-5" />
+            </a>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="text-gray-600 transition-colors hover:text-primary"
+            >
+              <FaEnvelope className="w-5 h-5" />
+            </a>
+          </div>
+          <div className="space-y-2 text-sm text-center text-gray-600">
+            <p>
+              © {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+            </p>
+            <p>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="transition-colors hover:text-primary"
+              >
+                {personalInfo.email}
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

@@ -1,0 +1,158 @@
+{
+  "personalInfo": {
+    "name": "Nathaniel Orange",
+    "company": "Halimede AI",
+    "title": "Full Stack Developer | Vertical AI Systems Designer | Automation Engineer",
+    "email": "halimedetech@gmail.com",
+    "phone": "+1 (904) 252-0927",
+    "location": "Jacksonville, FL 32211",
+    "github": "https://github.com/lmnhd",
+    "linkedin": "https://www.linkedin.com/in/nathaniel-orange-a217a9a/",
+    "companyLinkedin": "https://www.linkedin.com/company/105838753/admin/dashboard/"
+  },
+  "coverLetter": {
+    "title": "Why I'm Your Next AI Innovation Lead",
+    "paragraphs": [
+      "As an AI framework architect and full-stack developer with a passion for pushing the boundaries of artificial intelligence, I bring a unique blend of technical expertise and creative problem-solving to the table. My recent work on the Ajantic Framework—a sophisticated multi-agent AI system—demonstrates my ability to architect and implement complex AI solutions that drive real business value.",
+      "What sets me apart is my diverse background spanning technology, business operations, and creative industries. This multifaceted experience allows me to bridge the gap between technical innovation and practical business applications. With over 6 years of experience in workflow automation at Fidelity National Financial Group and my current role leading AI development initiatives, I've consistently delivered solutions that transform business operations.",
+      "I'm particularly excited about the potential to contribute to your team's cutting-edge work in AI automation. My experience in developing scalable, multi-agent systems aligns perfectly with your mission to push the boundaries of what's possible with AI. Currently pursuing my Computer Science degree at University of Phoenix while actively developing enterprise-level applications, I bring both theoretical knowledge and practical expertise to the table.",
+      "I'm not just looking for a role—I'm seeking to be part of a team that's shaping the future of AI. My track record of successful project delivery, combined with my passion for AI innovation and ability to adapt to emerging technologies, makes me an ideal candidate to help drive your next generation of AI solutions."
+    ]
+  },
+  "experience": [
+    {
+      "title": "Founder & Lead Developer",
+      "company": "Halimede AI",
+      "period": "2024 - Present",
+      "description": "Founded Halimede AI, focusing on developing cutting-edge AI solutions and frameworks. Leading the development of the Ajantic Framework, a sophisticated multi-agent AI system designed for building and deploying advanced AI solutions. Leveraging multiple AI providers (OpenAI, Anthropic, Amazon Bedrock, Azure AI) along with Langchain JS and Vercel AI SDK to create powerful AI applications. Implemented voice synthesis and processing using Eleven Labs, enabling natural language interactions and multi-modal AI capabilities. Features include dynamic agent spawning, team orchestration, and workflow automation, with seamless integration of multiple AI agents working together to solve complex problems.",
+      "technologies": [
+        "OpenAI",
+        "Anthropic",
+        "Amazon Bedrock",
+        "Azure AI",
+        "Eleven Labs",
+        "Langchain JS",
+        "Vercel AI",
+        "Next.js",
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Lead Developer",
+      "company": "The Ajantic Project",
+      "period": "2023 - Present",
+      "description": "Architected and developed the Ajantic Framework, an innovative AI framework enabling dynamic agent creation and team orchestration. Led the implementation of core features including multi-model provider support (OpenAI, Anthropic, Mistral), voice integration capabilities, and automated workflow systems. Successfully deployed the framework in various enterprise applications.",
+      "technologies": ["AI Development", "React", "Node.js", "AWS"]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Leisure Life Vacations LLC",
+      "period": "Aug 2022 - Present",
+      "description": "Full Stack Development utilizing Node.js, React, Next.js, Angular, Prisma, MongoDB, MySQL, Google Firebase, Azure, and AWS. Leading the development of applications with a focus on workflow automation and team collaboration. Developed the Ajantic Framework, a sophisticated multi-agent AI framework for building and deploying advanced AI solutions."
+    },
+    {
+      "title": "Systems Automation Developer",
+      "company": "Fidelity National Financial Group",
+      "period": "May 2016 - Jan 2022",
+      "description": "Systems Automation Development & Management Systems. Developed automation scripts using vb.net, C#, BPA Automate, and SQL Server. Collaborated with QA teams to create and refine workflows, enhancing productivity and efficiency."
+    },
+    {
+      "title": "Lead Developer",
+      "company": "Halimede Technology LLC",
+      "period": "2012 - 2014",
+      "description": "Lead Developer for multiple web applications including MixTape Machine and Meter Masters. Built full-stack solutions using ASP.NET MVC, SQL Server, and modern front-end technologies. Developed Gear SMS app for Samsung Gear 2 smartwatch using Tizen SDK and JavaScript."
+    },
+    {
+      "title": "IT Administrator & Web Developer",
+      "company": "Winners Inc.",
+      "period": "2010 - 2012",
+      "description": "IT Administration and Web Development. Managed network infrastructure and developed web solutions using PHP, MySQL, JavaScript/jQuery. Implemented and maintained company websites and databases."
+    },
+    {
+      "title": "Freelance Developer",
+      "company": "Self-Employed",
+      "period": "2008 - 2016",
+      "description": "Developed various web applications and sites for music artists and businesses.",
+      "projects": [
+        "Full-stack ASP.NET MVC website with content management system",
+        "Online audio mixing service platform with automated scheduling",
+        "Custom e-commerce solutions with payment integration"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Phoenix",
+      "period": "2024 - Present",
+      "degree": "Computer Science"
+    },
+    {
+      "school": "American Public University",
+      "period": "2015 - 2016",
+      "degree": "Certificate in Website Development"
+    },
+    {
+      "school": "Kaplan University",
+      "period": "2013 - 2014",
+      "degree": "Information Technology"
+    }
+  ],
+  "skills": {
+    "languages": [
+      "TypeScript",
+      "C#",
+      "JavaScript",
+      "Python",
+      "PHP",
+      "Java",
+      "VB.NET",
+      "HTML",
+      "CSS",
+      "SQL"
+    ],
+    "aiAndDevelopment": [
+      "Next.js 14",
+      "React 19",
+      "OpenAI API",
+      "Anthropic Claude",
+      "Amazon Bedrock",
+      "Azure AI Services",
+      "Eleven Labs Voice AI",
+      "Langchain JS",
+      "Vercel AI SDK",
+      "Angular",
+      ".NET Core",
+      "Prisma",
+      "Entity Framework",
+      "Tailwind CSS"
+    ],
+    "platforms": [
+      "AWS",
+      "Azure",
+      "Google Firebase",
+      "SQL Server",
+      "MongoDB",
+      "MySQL",
+      "GitHub",
+      "Docker",
+      "Git"
+    ]
+  },
+  "projects": [
+    {
+      "title": "Ajantic Framework",
+      "description": "A sophisticated multi-agent AI framework designed for building and deploying advanced AI solutions, featuring dynamic agent spawning, team orchestration, and workflow automation.",
+      "link": "https://github.com/lmnhd/lyrical"
+    },
+    {
+      "title": "Leisure Life Vacations",
+      "description": "A web application for locating and booking Vacation Cruises built using Next.js, React, Prisma DB (MySQL).",
+      "link": "https://www.leisurelifevacations.net"
+    },
+    {
+      "title": "Subkitz",
+      "description": "A web application allowing musicians to audition and download samples, sounds, and sound FX for music production built with Next.js, React, AWS.",
+      "link": "https://www.subkitz.net"
+    }
+  ]
+}
