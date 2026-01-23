@@ -19,6 +19,15 @@ The following rules are inherited from the Master Workspace and MUST be followed
 - **Always create checkpoints before significant changes**: `git add . ; git commit -m "checkpoint: before [change]"`
 - Use descriptive commit messages that explain the "why"
 - Confirm multi-step plans with user before executing
+- NEVER auto-commit without explicit user permission
+
+### Agent Behavior Rules (CRITICAL)
+- **🚫 NEVER run `npm run dev`, `npm start`, or any dev server commands** - User controls server lifecycle
+- **🚫 NEVER run `npm install` without explicit permission** - User may have specific dependency management needs
+- **✅ ALWAYS create git checkpoint before file edits** - Use PowerShell syntax: `git add . ; git commit -m "checkpoint: before [description]"`
+- **✅ ALWAYS confirm multi-step operations** - Explain plan, wait for approval
+- **✅ ASK before structural changes** - Don't assume, confirm with user first
+- **✅ READ instructions files first** - Check `.github/copilot-instructions.md`, `CLAUDE.md`, `PDR.md` before starting work
 
 ### Development Philosophy
 - Prefer AI/LLM solutions over programmatic approaches when applicable
@@ -29,8 +38,9 @@ The following rules are inherited from the Master Workspace and MUST be followed
 ## Next.js Conventions
 - **Separate business logic from route handlers** - use `api/<endpoint>/core-logic.ts` pattern
 - Be mindful of client/server component boundaries
-- Never start/stop the dev server (user manages this)
+- **🚫 NEVER start/stop the dev server** - User manages this completely (DO NOT run `npm run dev`, `npm start`, or any server commands)
 - Create test pages in `/tests/` or `app/tests/` directories
+- Use Server Components by default; only add 'use client' when necessary for interactivity
 
 ## Project-Specific Rules
 
