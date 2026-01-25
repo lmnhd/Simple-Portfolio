@@ -140,19 +140,10 @@
   },
   "projects": [
     {
-      "title": "Ajantic Framework",
-      "description": "A sophisticated multi-agent AI framework designed for building and deploying advanced AI solutions, featuring dynamic agent spawning, team orchestration, and workflow automation.",
-      "link": "https://github.com/lmnhd/lyrical"
-    },
-    {
-      "title": "Leisure Life Vacations",
-      "description": "A web application for locating and booking Vacation Cruises built using Next.js, React, Prisma DB (MySQL).",
-      "link": "https://www.leisurelifevacations.net"
-    },
-    {
-      "title": "Subkitz",
-      "description": "A web application allowing musicians to audition and download samples, sounds, and sound FX for music production built with Next.js, React, AWS.",
-      "link": "https://www.subkitz.net"
+      "title": "BlockarizedAILab POC",
+      "description": "AI-Powered Lyric Writing Studio for Music Producers. A visual workflow builder that revolutionizes the creative process for music producers and songwriters. The BlockarizedAILab POC enables you to construct custom lyric generation pipelines by visually chaining together specialized AI agents, RAG-powered reference databases, rhyme tools, and conditional logic—all without writing code. Design workflows that pull inspiration from genre-specific lyric databases, enforce rhyme schemes and syllable patterns, inject mood/style constraints, and A/B test multiple creative directions in parallel. Multi-provider LLM integration (OpenAI, Anthropic, Together AI) lets you experiment with different AI personalities—using Claude for narrative-driven verses, GPT-4 for punchy hooks, or specialized models for genre-specific slang. The dynamic property panel fine-tunes prompt templates, temperature/creativity controls, rhyme density requirements, and style consistency. Unlike traditional one-shot generators, this POC enables iterative refinement workflows with critique agents, revision loops, and quality gates. The execution engine tracks results in real-time, displaying each step's output so you identify exactly where the flow breaks or which AI provider nails your vibe. Transform the tedious 'stare at blank page' phase into rapid ideation where you explore 10+ lyrical directions in the time it used to take to write one verse, all while maintaining full creative control over structure, style, and storytelling.",
+      "link": "https://blockarized-ai-lab-poc.vercel.app/",
+      "image": "/Lyric_Lab_1.png"
     }
   ]
 }

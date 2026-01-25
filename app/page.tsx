@@ -26,10 +26,7 @@ export default async function PortfolioPage() {
   const data: PortfolioData = portfolioData;
   const { personalInfo, coverLetter, experience, education, skills, projects } = data;
 
-  // Static image paths (served from /public)
-  const halimede_img = "/portfolio_img/Halimede.png";
-  const leisure_life_img = "/portfolio_img/LeisureLife.png";
-  const subkitz_img = "/portfolio_img/Subkitz.png";
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -275,19 +272,17 @@ export default async function PortfolioPage() {
             {projects.map((project, index) => (
               <div key={index} className="overflow-hidden transition-colors border border-gray-200 rounded-lg bg-gray-50 hover:border-primary hover:shadow-lg">
                 {/* Project Image */}
-                <div className="relative w-full h-48">
-                  <Image
-                    src={
-                      index === 0 ? halimede_img :
-                      index === 1 ? leisure_life_img :
-                      subkitz_img
-                    }
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
+                {project.image && (
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                )}
                 {/* Project Details */}
                 <div className="p-6">
                   <h3 className="mb-2 text-lg font-bold text-foreground">
