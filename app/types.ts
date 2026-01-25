@@ -41,6 +41,13 @@ export interface Project {
   description: string;
   link: string;
   image?: string;
+  audience?: string;
+  highlights?: string[];
+  capabilities?: Array<{
+    name: string;
+    description: string;
+  }>;
+  impact?: string[];
 }
 
 export interface PortfolioData {

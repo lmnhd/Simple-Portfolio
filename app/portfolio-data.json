@@ -141,9 +141,45 @@
   "projects": [
     {
       "title": "BlockarizedAILab POC",
-      "description": "AI-Powered Lyric Writing Studio for Music Producers. A visual workflow builder that revolutionizes the creative process for music producers and songwriters. The BlockarizedAILab POC enables you to construct custom lyric generation pipelines by visually chaining together specialized AI agents, RAG-powered reference databases, rhyme tools, and conditional logic—all without writing code. Design workflows that pull inspiration from genre-specific lyric databases, enforce rhyme schemes and syllable patterns, inject mood/style constraints, and A/B test multiple creative directions in parallel. Multi-provider LLM integration (OpenAI, Anthropic, Together AI) lets you experiment with different AI personalities—using Claude for narrative-driven verses, GPT-4 for punchy hooks, or specialized models for genre-specific slang. The dynamic property panel fine-tunes prompt templates, temperature/creativity controls, rhyme density requirements, and style consistency. Unlike traditional one-shot generators, this POC enables iterative refinement workflows with critique agents, revision loops, and quality gates. The execution engine tracks results in real-time, displaying each step's output so you identify exactly where the flow breaks or which AI provider nails your vibe. Transform the tedious 'stare at blank page' phase into rapid ideation where you explore 10+ lyrical directions in the time it used to take to write one verse, all while maintaining full creative control over structure, style, and storytelling.",
+      "audience": "For music producers and songwriters",
+      "description": "AI-Powered Lyric Writing Studio. A visual workflow builder that revolutionizes the creative process, enabling you to construct custom lyric generation pipelines by visually chaining together specialized AI agents, RAG-powered reference databases, rhyme tools, and conditional logic—all without writing code.",
+      "highlights": [
+        "Visual node-based workflow editor for AI pipeline construction",
+        "Multi-provider LLM integration (OpenAI, Anthropic, Together AI)",
+        "Dynamic property panel for prompt template customization",
+        "Real-time workflow execution with step-by-step result tracking",
+        "Iterative refinement workflows with critique agents and quality gates"
+      ],
+      "capabilities": [
+        {
+          "name": "Visual Workflow Builder",
+          "description": "Drag-and-drop canvas for designing lyric generation pipelines with pre-configured AI nodes"
+        },
+        {
+          "name": "Multi-LLM Support",
+          "description": "Experiment with different AI personalities—Claude for narrative verses, GPT-4 for hooks, specialized models for genre-specific slang"
+        },
+        {
+          "name": "Rhyme & Syllable Control",
+          "description": "Enforce rhyme schemes, syllable patterns, mood/style constraints, and reference-based stylistic consistency"
+        },
+        {
+          "name": "Real-time Execution",
+          "description": "Track workflow progress with detailed step-by-step output, identifying exactly where flows break or which provider nails your vibe"
+        },
+        {
+          "name": "A/B Testing",
+          "description": "Test multiple creative directions in parallel to explore diverse lyrical approaches simultaneously"
+        }
+      ],
+      "impact": [
+        "Transform tedious 'stare at blank page' into rapid ideation",
+        "Explore 10+ lyrical directions in the time it used to take to write one verse",
+        "Maintain full creative control over structure, style, and storytelling",
+        "Reduce creative iteration cycles through AI-assisted refinement loops"
+      ],
       "link": "https://blockarized-ai-lab-poc.vercel.app/",
-      "image": "/Lyric_Lab_1.png"
+      "image": "/portfolio_img/Lyric_Lab_1.png"
     }
   ]
 }

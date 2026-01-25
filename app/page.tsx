@@ -12,6 +12,10 @@ import {
   FaShip,
   FaDrumSteelpan,
   FaPhone,
+  FaStar,
+  FaLightbulb,
+  FaCube,
+  FaChartLine,
 } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import FeatureCard from "@/components/FeatureCard";
@@ -103,6 +107,157 @@ export default async function PortfolioPage() {
           {personalInfo.location} • {personalInfo.phone}
         </p>
       </WavyBackground>
+
+      {/* Featured Projects Section - MOVED TO POSITION 2 */}
+      <section className="relative px-4 py-20 bg-gradient-to-b from-white to-gray-50" id="projects">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center gap-2 mb-4 px-4 py-2 text-xs font-semibold tracking-widest uppercase rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600">
+              <FaStar className="w-3 h-3" />
+              FEATURED WORK
+            </div>
+            <h2 className="mb-4 text-4xl md:text-5xl font-bold text-foreground">
+              Flagship Projects
+            </h2>
+            <p className="text-lg text-gray-600">
+              Demonstrations of AI innovation and full-stack development
+            </p>
+          </div>
+
+          {/* Projects Grid - Currently 1 flagship project, scales for multiple */}
+          <div className="grid gap-12 lg:gap-16">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="group relative"
+              >
+                {/* Decorative gradient border */}
+                <div className="absolute -inset-px bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-400 rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500 -z-10" />
+                
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 group-hover:border-transparent">
+                  {/* Project Image */}
+                  {project.image && (
+                    <div className="relative w-full h-80 overflow-hidden bg-gray-900">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 1024px) 100vw, 1000px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                    </div>
+                  )}
+
+                  {/* Project Content */}
+                  <div className="p-8 md:p-12">
+                    {/* Header with Title and Audience */}
+                    <div className="mb-6">
+                      <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+                        {project.title}
+                      </h3>
+                      {project.audience && (
+                        <p className="text-lg font-medium text-blue-600">
+                          {project.audience}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Description */}
+                    <p className="mb-8 text-lg leading-relaxed text-gray-700">
+                      {project.description}
+                    </p>
+
+                    {/* Highlights - Key Features Bullets */}
+                    {project.highlights && project.highlights.length > 0 && (
+                      <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100">
+                        <h4 className="flex items-center gap-2 mb-4 text-sm font-bold uppercase tracking-wider text-foreground">
+                          <FaLightbulb className="w-4 h-4 text-blue-600" />
+                          Key Features
+                        </h4>
+                        <ul className="grid gap-3 md:grid-cols-2">
+                          {project.highlights.map((highlight, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-sm text-gray-700">
+                              <span className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0" />
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Capabilities - Feature Cards with Icons */}
+                    {project.capabilities && project.capabilities.length > 0 && (
+                      <div className="mb-8">
+                        <h4 className="flex items-center gap-2 mb-6 text-sm font-bold uppercase tracking-wider text-foreground">
+                          <FaCube className="w-4 h-4 text-indigo-600" />
+                          Core Capabilities
+                        </h4>
+                        <div className="grid gap-4 md:grid-cols-2">
+                          {project.capabilities.map((capability, idx) => (
+                            <div
+                              key={idx}
+                              className="p-4 border border-gray-200 rounded-lg bg-white hover:border-indigo-300 hover:bg-indigo-50 transition-colors"
+                            >
+                              <h5 className="font-semibold text-foreground mb-2">
+                                {capability.name}
+                              </h5>
+                              <p className="text-sm text-gray-600">
+                                {capability.description}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Impact Metrics */}
+                    {project.impact && project.impact.length > 0 && (
+                      <div className="mb-8 p-6 border-l-4 border-blue-600 bg-blue-50 rounded-r-lg">
+                        <h4 className="flex items-center gap-2 mb-4 text-sm font-bold uppercase tracking-wider text-foreground">
+                          <FaChartLine className="w-4 h-4 text-blue-600" />
+                          Impact & Benefits
+                        </h4>
+                        <ul className="space-y-2">
+                          {project.impact.map((item, idx) => (
+                            <li key={idx} className="flex items-start gap-3 text-sm text-gray-700">
+                              <span className="text-blue-600 font-bold mt-0.5">✓</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* CTA Button */}
+                    <div className="flex gap-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-white rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                      >
+                        View Live Project
+                        <span className="text-lg">→</span>
+                      </a>
+                      <a
+                        href={personalInfo.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-foreground rounded-lg border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
+                      >
+                        <FaGithub className="w-5 h-5" />
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Overview Section */}
       <section className="px-4 py-16 bg-white border-b border-gray-100">
@@ -258,51 +413,6 @@ export default async function PortfolioPage() {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Section */}
-      <section className="px-4 py-20 bg-white" id="projects">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="mb-16 text-3xl font-bold text-center text-foreground">
-            Featured projects
-          </h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {projects.map((project, index) => (
-              <div key={index} className="overflow-hidden transition-colors border border-gray-200 rounded-lg bg-gray-50 hover:border-primary hover:shadow-lg">
-                {/* Project Image */}
-                {project.image && (
-                  <div className="relative w-full h-48">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-                )}
-                {/* Project Details */}
-                <div className="p-6">
-                  <h3 className="mb-2 text-lg font-bold text-foreground">
-                    {project.title}
-                  </h3>
-                  <p className="mb-4 text-sm text-gray-700 line-clamp-2">
-                    {project.description}
-                  </p>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-semibold transition-colors text-primary hover:text-blue-700"
-                  >
-                    View project
-                    <span className="ml-2">→</span>
-                  </a>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
