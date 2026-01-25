@@ -86,7 +86,66 @@ This project demonstrates:
 - Responsive design with Tailwind CSS 4
 - Professional portfolio presentation
 
+---
+
+## 🤖 Portfolio Agent Guidelines
+
+### CRITICAL: Read Before Making Changes
+1. **ALWAYS read** `.github/AGENT_README.md` for comprehensive maintenance guide
+2. **ALWAYS read** `.github/skills/brand-identity/SKILL.md` for design system
+3. **Create checkpoint** before edits: `git add . ; git commit -m "checkpoint: before [change]"`
+
+### Portfolio Maintenance Tasks
+
+#### Adding/Updating Content
+- **ALL content** lives in `portfolio-data.json` - never hardcode text in components
+- Update `types.ts` if adding new data fields
+- Follow voice/tone guidelines in `brand-identity/resources/voice-tone.md`
+
+#### Adding New Projects
+1. Add screenshot to `/public/portfolio_img/ProjectName.png` (1200x630 recommended)
+2. Add project object to `portfolio-data.json` projects array:
+   ```json
+   {
+     "title": "Project Name",
+     "description": "WHAT + HOW + IMPACT in 2-3 sentences",
+     "link": "https://...",
+     "image": "/portfolio_img/ProjectName.png"
+   }
+   ```
+3. Place newest projects FIRST in the array
+
+#### Styling Changes
+- **NEVER hardcode colors** - use CSS variables (`bg-primary`, `text-foreground`)
+- Reference `brand-identity/resources/design-tokens.json` for all styling decisions
+- Follow component patterns in `brand-identity/resources/tech-stack.md`
+
+### Layout Optimization Priority
+**User has requested Projects section be more prominent.** Consider:
+- Moving Projects section higher in page order (after Hero)
+- Adding visual prominence (gradient backgrounds, badges)
+- See `AGENT_README.md` for detailed implementation options
+
+### Section Order Reference (app/page.tsx)
+| Current Position | Section | Recommended Action |
+|------------------|---------|-------------------|
+| 1 | Hero | Keep |
+| 2 | Overview | Consider condensing or moving down |
+| 3 | Experience | Keep |
+| 4 | Education | Keep (inside Experience) |
+| 5 | Skills | Consider condensing |
+| 6 | **Projects** | **⚠️ MOVE HIGHER - Position 2 or 3** |
+| 7 | CTA | Keep |
+| 8 | Footer | Keep |
+
+---
+
 ## References
+- **Agent Guide**: `.github/AGENT_README.md`
+- **Brand Identity Skill**: `.github/skills/brand-identity/SKILL.md`
+- **Design Tokens**: `.github/skills/brand-identity/resources/design-tokens.json`
+- **Tech Stack**: `.github/skills/brand-identity/resources/tech-stack.md`
+- **Voice/Tone**: `.github/skills/brand-identity/resources/voice-tone.md`
 - Master Workspace Rules: `C:\Users\cclem\Dropbox\Source\.github\copilot-instructions.md`
 - Project Design Record: `PDR.md`
 - Setup Guide: `README.md`
