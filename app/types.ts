@@ -48,6 +48,7 @@ export interface Project {
     description: string;
   }>;
   impact?: string[];
+  github?: string;
 }
 
 export interface PortfolioData {

@@ -36,76 +36,92 @@ export default async function PortfolioPage() {
     <div className="min-h-screen bg-background text-foreground">
       <NavbarManager />
       
-      {/* Hero Section with Animated Background */}
+      {/* Hero Section with Animated Background - 2026 Redesign */}
       <WavyBackground 
-        containerClassName="min-h-screen w-full"
-        className="px-4 py-32"
-        colors={["#818cf8", "#c084fc", "#e879f9", "#38bdf8"]}
-        blur={10}
-        speed="slow"
-        waveOpacity={0.5}
-        backgroundFill="rgb(15, 23, 42)"
+        containerClassName="min-h-screen w-full flex flex-col items-center justify-center"
+        className="w-full max-w-4xl mx-auto px-4 pb-10 sm:pb-20"
+        colors={["#2962FF", "#FF0080", "#00FFF0", "#7928CA"]} // Electric Blue + Vivid Accents
+        blur={8}
+        speed="fast"
+        waveOpacity={0.6}
+        backgroundFill="#030014" // Deep space blue/black
       >
-        <div className="w-32 h-32 mx-auto mb-6 overflow-hidden rounded-full shadow-xl ring-4 ring-white/30">
-          <Image
-            src="/headshot.jpg"
-            alt={personalInfo.name}
-            width={128}
-            height={128}
-            className="object-cover w-full h-full"
-            priority
-          />
+        <div className="relative z-10 p-6 sm:p-10 md:p-14 rounded-[2.5rem] border border-white/10 bg-black/20 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(41,98,255,0.3)] flex flex-col items-center text-center overflow-hidden group/card transition-all hover:border-white/20">
+          
+          {/* Decorative gradients inside the card */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-32 bg-blue-500/20 blur-[80px] rounded-full pointer-events-none"></div>
+
+          {/* Glowing Avatar */}
+          <div className="relative mb-8 group">
+             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-tr from-blue-600 to-pink-500 opacity-60 blur-md transition duration-500 group-hover:opacity-100 animate-pulse"></div>
+            <div className="relative w-36 h-36 md:w-44 md:h-44 overflow-hidden rounded-full ring-4 ring-white/10 shadow-2xl">
+              <Image
+                src="/headshot.jpg"
+                alt={personalInfo.name}
+                width={176}
+                height={176}
+                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                priority
+              />
+            </div>
+          </div>
+
+          {/* Typography */}
+          <h1 className="mb-4 text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter text-white drop-shadow-2xl">
+            {personalInfo.name}
+          </h1>
+          
+          <div className="inline-flex items-center px-5 py-2 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-md shadow-lg shadow-blue-500/10">
+            <span className="w-2 h-2 mr-2.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_10px_#60A5FA]"></span>
+            <p className="text-xs sm:text-sm font-bold tracking-[0.2em] text-blue-200 uppercase">
+              {personalInfo.company}
+            </p>
+          </div>
+
+          <p className="mb-10 text-xl sm:text-2xl font-light text-blue-50 max-w-2xl leading-relaxed drop-shadow-md">
+            {personalInfo.title}
+          </p>
+
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full md:w-auto mb-10">
+            <a href={`mailto:${personalInfo.email}`} className="w-full sm:w-auto">
+              <Button className="w-full sm:w-auto px-10 py-7 text-lg font-bold text-white transition-all duration-300 rounded-2xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 hover:scale-[1.02] shadow-[0_0_30px_-5px_rgba(41,98,255,0.5)] border-0 ring-1 ring-white/20">
+                Contact Me
+              </Button>
+            </a>
+            <div className="w-full sm:w-auto transform transition-transform hover:scale-105">
+              <DownloadButton />
+            </div>
+          </div>
+
+          {/* Social Links - Glass styling */}
+          <div className="flex items-center justify-center gap-5">
+            {[ 
+              { href: personalInfo.github, Icon: FaGithub },
+              { href: personalInfo.linkedin, Icon: FaLinkedin },
+              { href: `mailto:${personalInfo.email}`, Icon: FaEnvelope },
+              { href: `tel:${personalInfo.phone}`, Icon: FaPhone }
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.href}
+                target={social.href.startsWith("http") ? "_blank" : undefined}
+                rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="relative p-4 text-white/80 transition-all duration-300 rounded-2xl bg-white/5 hover:bg-white/10 hover:text-white hover:-translate-y-1 hover:shadow-[0_5px_15px_-5px_rgba(255,255,255,0.1)] border border-white/5 hover:border-white/20 group/icon"
+              >
+                <div className="absolute inset-0 bg-blue-500/20 rounded-2xl blur opacity-0 group-hover/icon:opacity-100 transition-opacity"></div>
+                <social.Icon className="relative z-10 w-6 h-6" />
+              </a>
+            ))}
+          </div>
+
+          {/* Location & Contact - Subtle footer inside card */}
+          <div className="mt-8 pt-6 border-t border-white/5 w-full text-center">
+            <p className="text-sm font-light tracking-widest text-blue-200/50 uppercase">
+              {personalInfo.location} • {personalInfo.phone}
+            </p>
+          </div>
         </div>
-        <h1 className="mb-2 text-4xl md:text-5xl font-bold text-center text-violet-300">
-          {personalInfo.name}
-        </h1>
-        <p className="mb-4 text-lg font-light tracking-widest text-center text-white/70">
-          {personalInfo.company}
-        </p>
-        <p className="mb-8 text-xl md:text-2xl font-light tracking-wide text-center text-white/90">
-          {personalInfo.title}
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-          <a href={`mailto:${personalInfo.email}`}>
-            <Button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 border rounded-full bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30 hover:-translate-y-1">
-              Contact Me
-            </Button>
-          </a>
-          <DownloadButton />
-        </div>
-        <div className="flex items-center justify-center gap-6 mb-8">
-          <a
-            href={personalInfo.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors text-white/80 hover:text-white"
-          >
-            <FaGithub className="w-7 h-7" />
-          </a>
-          <a
-            href={personalInfo.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors text-white/80 hover:text-white"
-          >
-            <FaLinkedin className="w-7 h-7" />
-          </a>
-          <a
-            href={`mailto:${personalInfo.email}`}
-            className="transition-colors text-white/80 hover:text-white"
-          >
-            <FaEnvelope className="w-7 h-7" />
-          </a>
-          <a
-            href={`tel:${personalInfo.phone}`}
-            className="transition-colors text-white/80 hover:text-white"
-          >
-            <FaPhone className="w-6 h-6" />
-          </a>
-        </div>
-        <p className="text-sm font-light tracking-wide text-center text-white/60">
-          {personalInfo.location} • {personalInfo.phone}
-        </p>
       </WavyBackground>
 
       {/* Featured Projects Section - MOVED TO POSITION 2 */}
@@ -242,7 +258,7 @@ export default async function PortfolioPage() {
                         <span className="text-lg">→</span>
                       </a>
                       <a
-                        href={personalInfo.github}
+                        href={project.github || personalInfo.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-foreground rounded-lg border-2 border-gray-300 hover:border-gray-400 hover:bg-gray-50 transition-all duration-200"
