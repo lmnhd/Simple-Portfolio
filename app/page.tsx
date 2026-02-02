@@ -40,11 +40,12 @@ export default async function PortfolioPage() {
       <WavyBackground 
         containerClassName="min-h-screen w-full flex flex-col items-center justify-center"
         className="w-full max-w-4xl mx-auto px-4 pb-10 sm:pb-20"
-        colors={["#2962FF", "#FF0080", "#00FFF0", "#7928CA"]} // Electric Blue + Vivid Accents
-        blur={8}
+        colors={["#FF1B6B", "#45CAFF", "#FFD700", "#9B00FF", "#00FF9E"]} // Vivid: Radiant Red, Sky Blue, Gold, Electric Violet, Neon Mint
+        blur={6}
         speed="fast"
-        waveOpacity={0.6}
-        backgroundFill="#030014" // Deep space blue/black
+        waveOpacity={0.7}
+        backgroundFill="#020010" // Almost black with a hint of purple
+        waveWidth={60}
       >
         <div className="relative z-10 p-6 sm:p-10 md:p-14 rounded-[2.5rem] border border-white/10 bg-black/20 backdrop-blur-xl shadow-[0_0_60px_-15px_rgba(41,98,255,0.3)] flex flex-col items-center text-center overflow-hidden group/card transition-all hover:border-white/20">
           

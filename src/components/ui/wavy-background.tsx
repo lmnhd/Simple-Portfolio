@@ -72,15 +72,26 @@ export const WavyBackground = ({
     nt += getSpeed();
     for (i = 0; i < n; i++) {
       ctx.beginPath();
-      ctx.lineWidth = waveWidth || 50;
+      // Vary line width based on index for depth perception
+      ctx.lineWidth = (waveWidth || 50) * (1 - i * 0.1); 
+      
+      // Screen blend mode makes colors glow when they overlap
+      ctx.globalCompositeOperation = "screen";
+      
       ctx.strokeStyle = waveColors[i % waveColors.length];
       for (x = 0; x < w; x += 5) {
-        var y = noise(x / 800, 0.3 * i, nt) * 100;
-        ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
+        // Multi-octave noise for organic, "liquid" feeling
+        const noise1 = noise(x / 800, 0.3 * i, nt);
+        const noise2 = noise(x / 500, 0.4 * i, nt * 1.5);
+        
+        var y = (noise1 * 100) + (noise2 * 40);
+        ctx.lineTo(x, y + h * 0.5); 
       }
       ctx.stroke();
       ctx.closePath();
     }
+    // Reset globalCompositeOperation allows background to clear properly next frame
+    ctx.globalCompositeOperation = "source-over";
   };
 
   let animationId: number;
