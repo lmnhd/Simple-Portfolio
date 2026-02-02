@@ -140,24 +140,92 @@
   },
   "projects": [
     {
-      "title": "BlockarizedAILab POC",
-      "audience": "For music producers and songwriters",
-      "description": "AI-Powered Lyric Writing Studio. A visual workflow builder that revolutionizes the creative process, enabling you to construct custom lyric generation pipelines by visually chaining together specialized AI agents, RAG-powered reference databases, rhyme tools, and conditional logic—all without writing code.",
+      "title": "Concept Alchemy",
+      "audience": "Songwriters, Poets, and Creative Writers",
+      "description": "An immersive lyric exploration engine that transcends traditional rhyme dictionaries by leveraging vector semantics. This tool maps the 'DNA' of language, allowing creators to navigate through concepts based on emotional weight, imagery, and thematic resonance rather than just keywords.",
       "highlights": [
-        "Visual node-based workflow editor for AI pipeline construction",
-        "Multi-provider LLM integration (OpenAI, Anthropic, Together AI)",
-        "Dynamic property panel for prompt template customization",
-        "Real-time workflow execution with step-by-step result tracking",
-        "Iterative refinement workflows with critique agents and quality gates"
+        "Vector-based semantic navigation using pgvector",
+        "Multi-dimensional concept blending (Emotion, Attitude, Style, Imagery)",
+        "Real-time 'Agent Neural Stream' visualizing the AI's thought process",
+        "Interactive exploration of lyrical possibilities"
       ],
       "capabilities": [
         {
-          "name": "Visual Workflow Builder",
-          "description": "Drag-and-drop canvas for designing lyric generation pipelines with pre-configured AI nodes"
+          "name": "Semantic Blend",
+          "description": "Dial in the exact emotional frequency of your lyrics using sliding scales for precision nuance"
         },
         {
-          "name": "Multi-LLM Support",
-          "description": "Experiment with different AI personalities—Claude for narrative verses, GPT-4 for hooks, specialized models for genre-specific slang"
+          "name": "Vector Search",
+          "description": "Find conceptual matches that share the same 'vibe' even if they share zero words"
+        },
+        {
+          "name": "Neural Stream",
+          "description": "Watch the AI 'think' as it weighs 10+ stylistic vectors to unearth the perfect phrase"
+        }
+      ],
+      "impact": [
+        "Unlocks 'writer's block' by providing conceptually related creative jumping-off points",
+        "Visualizes the hidden semantic connections between disparate ideas"
+      ],
+      "link": "https://concept-alchemy.vercel.app/",
+      "github": "https://github.com/lmnhd/ConceptAlchemy",
+      "image": "/portfolio_img/Concept_Alchemy.png"
+    },
+    {
+      "title": "Devil's Advocate",
+      "audience": "Researchers, Analysts, and Critical Thinkers",
+      "description": "A high-performance multi-agent debate system designed to shatter echo chambers. This platform orchestrates real-time, adversarial debates between AI agents ('Believer' vs. 'Skeptic') to rigorously stress-test claims, expose cognitive biases, and provide a 360-degree view of any topic.",
+      "highlights": [
+        "Real-time dual-perspective conversational streams",
+        "Live 'credibility scoring' and evidence tracking",
+        "Multi-agent orchestration (Believer, Skeptic, Judge)",
+        "DynamoDB persistence for debate history"
+      ],
+      "capabilities": [
+        {
+          "name": "Adversarial Analysis",
+          "description": "Instantly generates counter-arguments to challenge assumptions"
+        },
+        {
+          "name": "Bias Detection",
+          "description": "Identifies logical fallacies and cognitive biases in real-time"
+        },
+        {
+          "name": "Fact Checking",
+          "description": "Cross-references claims against known data points"
+        }
+      ],
+      "impact": [
+        "Promotes critical thinking by presenting steel-manned opposing views",
+        "Reduces misinformation spread by highlighting analytical gaps"
+      ],
+      "link": "https://devils-advocate-theta.vercel.app/",
+      "github": "https://github.com/lmnhd/DevilsAdvocate",
+      "image": "/portfolio_img/Devils_Advocate.png"
+    },
+    {
+      "title": "BlockarizedAILab POC",
+      "audience": "For music producers and songwriters",
+      "description": "A sophisticated visual prompt engineering platform that pioneers the 'Modular Prompt' architecture. This system deconstructs complex LLM interactions into reusable, chainable nodes, enabling granular control over AI behaviors. Users can visually construct sophisticated prompt logic, integrating various AI models and RAG data sources to build highly specialized, context-aware generation pipelines without writing code.",
+      "highlights": [
+        "Visual node-based workflow editor for AI pipeline construction",
+        "Implementation of 'Modular Prompt' architecture",
+        "Multi-provider LLM integration (OpenAI, Anthropic, Together AI)",
+        "Granular control over prompt parameters and chain-of-thought sequencing",
+        "Real-time workflow execution with step-by-step result tracking"
+      ],
+      "capabilities": [
+        {
+          "name": "Modular Prompt Engine",
+          "description": "Break down complex tasks into atomic, reusable prompt nodes that can be chained, reused, and optimized individually"
+        },
+        {
+          "name": "Visual Logic Builder",
+          "description": "Drag-and-drop canvas for designing non-linear prompt flows with conditional logic and branching"
+        },
+        {
+          "name": "Multi-LLM Orchestration",
+          "description": "Route different parts of the prompt chain to the most suitable model (e.g., Claude for reasoning, GPT-4 for creative generation)"
         },
         {
           "name": "Rhyme & Syllable Control",
@@ -166,10 +234,6 @@
         {
           "name": "Real-time Execution",
           "description": "Track workflow progress with detailed step-by-step output, identifying exactly where flows break or which provider nails your vibe"
-        },
-        {
-          "name": "A/B Testing",
-          "description": "Test multiple creative directions in parallel to explore diverse lyrical approaches simultaneously"
         }
       ],
       "impact": [
